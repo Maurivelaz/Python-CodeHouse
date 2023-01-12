@@ -87,5 +87,4 @@ def main():
                 break
         except:
             print('No es un valor aceptado porfavor vuelta a ingresar solo numero')
-    
 main()
