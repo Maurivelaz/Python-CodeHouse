@@ -64,6 +64,7 @@ def login():
                 opcion = int(input('Si desea registrarlo presione 1 \nSi desea intentarlo nuevamente presione cualquier tecla\n'))
                 if(opcion ==1):
                     register()
+                    main()
                     break
                 else:
                     login()
@@ -79,9 +80,13 @@ def main():
             if opcion == 1:
                 if(login()):
                     break
+                else:
+                    break
             elif opcion == 2:
                 if(register()):
                     main()
+                else:
+                    break
             elif opcion >=3 or opcion == 0:
                 print('Adios')
                 break
