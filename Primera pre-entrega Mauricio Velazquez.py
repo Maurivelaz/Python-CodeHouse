@@ -53,7 +53,15 @@ def login():
     try:
         while True:
             if name in users:
-                if password in users[name] and password == users[name]:
+                if name == 'Admin' and password == users[name]:
+                    print(f'Bienvenido {name}')
+                    case1= int(input('Desea ver la lista de usuarios? aprete 1 , de lo contrario aprete cualquier otro numero \n'))
+                    if case1 == 1:
+                        show_users()
+                        return True
+                    else:
+                        return True
+                elif password in users[name] and password == users[name]:
                     print(f'Bienvenido {name}')
                     return True
                 else:
@@ -72,6 +80,12 @@ def login():
         print('Error en el login vuelva a intentarlo')
         login()
 
+def show_users():
+    readTxt()
+    print(f'La lista de usuarios es \nUsuario:     Contraseña:')
+    for clave,valor in users.items():
+        print(f'{clave}      {valor}')
+
 def main():
     print('Bienvenido')
     while True:
@@ -79,7 +93,7 @@ def main():
             opcion = int(input('1. Loggear\n2. Registro\n3. Salir\n'))
             if opcion == 1:
                 if(login()):
-                    break
+                    return True
                 else:
                     break
             elif opcion == 2:
