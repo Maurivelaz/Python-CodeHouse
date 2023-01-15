@@ -1,6 +1,11 @@
 ruta = 'usuarios.txt'
 users = {}
 def register ():
+    """
+    Register a new user
+    Returns:
+        True: if was register successful
+    """
     try:
         readTxt()
     except:
@@ -12,7 +17,7 @@ def register ():
     while True:
         if name not in users:
             users[name] = password
-            f = open(ruta, 'a')
+            f = open(ruta,'a')
             f.write(f'{name}:{password}:')
             f.close()
             print('Usuario registrado correctamente')
@@ -24,6 +29,9 @@ def register ():
             password = input('ingrese la contraseña\n')
 
 def readTxt():
+    """
+    Read Database in txt
+    """
     f = open(ruta,'r')
     datos = list(f.read().split(':'))
     f.close()
@@ -43,6 +51,11 @@ def readTxt():
         users[clave]= valor
 
 def login():
+    """
+    Login user
+    Returns:
+        True: if user is inside database
+    """
     try:
         readTxt()
     except:
@@ -81,12 +94,18 @@ def login():
         login()
 
 def show_users():
+    """
+    Method for show user in dictionary
+    """
     readTxt()
     print(f'La lista de usuarios es \nUsuario:     Contraseña:')
     for clave,valor in users.items():
         print(f'{clave}      {valor}')
 
 def main():
+    """
+    Method Main
+    """
     print('Bienvenido')
     while True:
         try:
@@ -106,4 +125,5 @@ def main():
                 break
         except:
             print('No es un valor aceptado porfavor vuelta a ingresar solo numero')
+
 main()
