@@ -1,0 +1,10 @@
+setup.py
+Entrega_Code_House_Mauricio_Velazquez.egg-info/PKG-INFO
+Entrega_Code_House_Mauricio_Velazquez.egg-info/SOURCES.txt
+Entrega_Code_House_Mauricio_Velazquez.egg-info/dependency_links.txt
+Entrega_Code_House_Mauricio_Velazquez.egg-info/top_level.txt
+my_package/__init__.py
+my_package/PrimeraEntrega/__init__.py
+my_package/PrimeraEntrega/login.py
+my_package/SegundaEntregaMauricioVelazquez/Cliente.py
+my_package/SegundaEntregaMauricioVelazquez/__init__.py
